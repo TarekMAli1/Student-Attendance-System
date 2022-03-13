@@ -20,25 +20,31 @@ import static org.junit.Assert.*;
  * @author antoz
  */
 public class EmailCheckerTest {
-    
+
     TestCasesWriter testWriter;
 
     @Test
     public void testverifyLength() {
-           
+        int TEST_WRITE = 0;
+
         //your test
-        String testData = "asfnasif";
-        assertTrue(EmailChecker.verifyLength(testData) == true);
-        try {
-            testWriter = new TestCasesWriter();
-            testWriter.writeInitialTestDetails("Omar ","1", "Testing that password's length should be more than 6 chars");
-            testWriter.writeTestPrequisits("Generate password input that has length larger and smaller than 6");
-            testWriter.writeTestData("1","Password : " + testData);
+        String testData1 = "asfnasif";
+        String testData2 = "xdman";
+        assertTrue(EmailChecker.verifyLength(testData1) == true);
+        assertTrue(EmailChecker.verifyLength(testData2) == false);
+        
+        //END TEST
+        if (TEST_WRITE == 1) {
+            try {
+                testWriter = new TestCasesWriter();
+                testWriter.writeInitialTestDetails("Omar ", "1", "Testing that password's length should be more than 6 chars");
+                testWriter.writeTestPrequisits("Generate password input that has length larger and smaller than 6");
+                testWriter.writeTestData("1", "Password : " + testData1);
 
-        } catch (IOException ex) {
-           ;
+            } catch (IOException ex) {
+                ;
+            }
         }
-
     }
 
 }
