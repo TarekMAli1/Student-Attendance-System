@@ -5,6 +5,9 @@
  */
 package attendance.system;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,95 +21,24 @@ import static org.junit.Assert.*;
  */
 public class EmailCheckerTest {
     
-    public EmailCheckerTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+    TestCasesWriter testWriter;
+
+    @Test
+    public void testverifyLength() {
+           
+        //your test
+        String testData = "asfnasif";
+        assertTrue(EmailChecker.verifyLength(testData) == true);
+        try {
+            testWriter = new TestCasesWriter();
+            testWriter.writeInitialTestDetails("Omar ","1", "Testing that password's length should be more than 6 chars");
+            testWriter.writeTestPrequisits("Generate password input that has length larger and smaller than 6");
+            testWriter.writeTestData("1","Password : " + testData);
+
+        } catch (IOException ex) {
+           ;
+        }
+
     }
 
-    /**
-     * Test of verify_email method, of class EmailChecker.
-     */
-    @Test
-    public void testVerify_email() {
-        System.out.println("verify_email");
-        String EMAIL = "";
-        EmailChecker instance = new EmailChecker();
-        boolean expResult = false;
-        boolean result = instance.verify_email(EMAIL);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of verify_pass method, of class EmailChecker.
-     */
-    @Test
-    public void testVerify_pass() {
-        System.out.println("verify_pass");
-        String pass = "";
-        EmailChecker instance = new EmailChecker();
-        boolean expResult = false;
-        boolean result = instance.verify_pass(pass);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of verifyLength method, of class EmailChecker.
-     */
-    @Test
-    public void testVerifyLength() {
-        System.out.println("verifyLength");
-        String pass = "";
-        boolean expResult = false;
-        boolean result = EmailChecker.verifyLength(pass);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of verifyUpperLowerDigit method, of class EmailChecker.
-     */
-    @Test
-    public void testVerifyUpperLowerDigit() {
-        System.out.println("verifyUpperLowerDigit");
-        String pass = "";
-        char[] arr = null;
-        EmailChecker instance = new EmailChecker();
-        instance.verifyUpperLowerDigit(pass, arr);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isVerified method, of class EmailChecker.
-     */
-    @Test
-    public void testIsVerified() {
-        System.out.println("isVerified");
-        EmailChecker instance = new EmailChecker();
-        boolean expResult = false;
-        boolean result = instance.isVerified();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
