@@ -224,30 +224,7 @@ public class DATABASE {
         }
         return false;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     String url, username, password;
     public static Connection MyConnection;
     public Connection con;

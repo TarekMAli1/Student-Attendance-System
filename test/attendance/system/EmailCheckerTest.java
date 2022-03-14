@@ -188,10 +188,7 @@ public class EmailCheckerTest {
             } catch (IOException ex) {
                 ;
             }
-        
         }
-    
-    
     }
     
     public void testThatemailIsLessThan12()
