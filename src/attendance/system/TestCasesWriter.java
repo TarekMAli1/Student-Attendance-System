@@ -48,6 +48,7 @@ public class TestCasesWriter {
     this.csvWriter.append("Test Case (Pass/Fail/Not Executed) : ");
     this.csvWriter.append("PASSED ,");
     this.csvWriter.append("\n");
+    this.csvWriter.append("\n");
     this.csvWriter.close();
     }
     

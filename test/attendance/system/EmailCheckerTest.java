@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 public class EmailCheckerTest {
 
     TestCasesWriter testWriter;
-    int TEST_WRITE=0;
+    int TEST_WRITE=1;
 
     @Test
     public void verifyLengthShouldReturnTrueIfGreaterThan7() {
@@ -106,7 +106,7 @@ public class EmailCheckerTest {
         }
     }
     
-    
+    @Test
     public void testThatPasswordHasUpperCaseLetter()
     {
     //test DATE
@@ -137,7 +137,7 @@ public class EmailCheckerTest {
         }
     
     }
-    
+    @Test
     public void testThatPasswordHasLowerCaseLetter()
     {
     //test DATE
@@ -151,7 +151,7 @@ public class EmailCheckerTest {
         assertTrue(checker.getLowerCaseFlag());
         checker= new EmailChecker();
         checker.verifyUpperLowerDigit(testData2, arr2);     
-        assertFalse(checker.getUpperCaseFlag());
+        assertFalse(checker.getLowerCaseFlag());
         
         if(TEST_WRITE==1)
         {
@@ -168,14 +168,14 @@ public class EmailCheckerTest {
         }
     
     }
-    
+    @Test
     public void testThatTheFirstCharISaLetter()
     {
         
     String testData1="ahmed@helwan.edu.eg";
     String testData2="Ahmed@helwan.edu.eg";        
-    assertTrue(EmailChecker.theFirstCharIsLetter(testData2));
-    assertFalse(EmailChecker.theFirstCharIsLetter(testData1));
+    assertTrue(EmailChecker.theFirstCharIsLetter(testData2)==true);
+    assertFalse(EmailChecker.theFirstCharIsLetter(testData1)==false);
     
     if(TEST_WRITE==1)
         {
@@ -190,7 +190,7 @@ public class EmailCheckerTest {
             }
         }
     }
-    
+    @Test
     public void testThatemailIsLessThan12()
     {
     String testData1="Ahmed@helwan.edu.eg";
